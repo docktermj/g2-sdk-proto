@@ -1,0 +1,90 @@
+syntax = "proto3";
+package g2engine;
+
+option go_package = "github.com/docktermj/g2-sdk-go-grpc/g2engine";
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+
+service G2Diagnostic {
+  rpc AddRecord(AddRecord) returns (AddRecord) {}
+  rpc AddRecordWithInfo(AddRecordWithInfo) returns (AddRecordWithInfo) {}
+  rpc AddRecordWithInfoWithReturnedRecordID(AddRecordWithInfoWithReturnedRecordID) returns (AddRecordWithInfoWithReturnedRecordID) {}
+  rpc AddRecordWithReturnedRecordID(AddRecordWithReturnedRecordID) returns (AddRecordWithReturnedRecordID) {}
+  rpc CheckRecord(CheckRecord) returns (CheckRecord) {}
+  rpc ClearLastException(ClearLastException) returns (ClearLastException) {}
+  rpc CloseExport(CloseExport) returns (CloseExport) {}
+  rpc CountRedoRecords(CountRedoRecords) returns (CountRedoRecords) {}
+  rpc DeleteRecord(DeleteRecord) returns (DeleteRecord) {}
+  rpc DeleteRecordWithInfo(DeleteRecordWithInfo) returns (DeleteRecordWithInfo) {}
+  rpc Destroy(Destroy) returns (Destroy) {}
+  rpc ExportConfig(ExportConfig) returns (ExportConfig) {}
+  rpc ExportConfigAndConfigID(ExportConfigAndConfigID) returns (ExportConfigAndConfigID) {}
+  rpc ExportCSVEntityReport(ExportCSVEntityReport) returns (ExportCSVEntityReport) {}
+  rpc ExportJSONEntityReport(ExportJSONEntityReport) returns (ExportJSONEntityReport) {}
+  rpc FetchNext(FetchNext) returns (FetchNext) {}
+  rpc FindInterestingEntitiesByEntityID(FindInterestingEntitiesByEntityID) returns (FindInterestingEntitiesByEntityID) {}
+  rpc FindInterestingEntitiesByRecordID(FindInterestingEntitiesByRecordID) returns (FindInterestingEntitiesByRecordID) {}
+  rpc FindNetworkByEntityID(FindNetworkByEntityID) returns (FindNetworkByEntityID) {}
+  rpc FindNetworkByEntityID_V2(FindNetworkByEntityID_V2) returns (FindNetworkByEntityID_V2) {}
+  rpc FindNetworkByRecordID(FindNetworkByRecordID) returns (FindNetworkByRecordID) {}
+  rpc FindNetworkByRecordID_V2(FindNetworkByRecordID_V2) returns (FindNetworkByRecordID_V2) {}
+  rpc FindPathByEntityID(FindPathByEntityID) returns (FindPathByEntityID) {}
+  rpc FindPathByEntityID_V2(FindPathByEntityID_V2) returns (FindPathByEntityID_V2) {}
+  rpc FindPathByRecordID(FindPathByRecordID) returns (FindPathByRecordID) {}
+  rpc FindPathByRecordID_V2(FindPathByRecordID_V2) returns (FindPathByRecordID_V2) {}
+  rpc FindPathExcludingByEntityID(FindPathExcludingByEntityID) returns (FindPathExcludingByEntityID) {}
+  rpc FindPathExcludingByEntityID_V2(FindPathExcludingByEntityID_V2) returns (FindPathExcludingByEntityID_V2) {}
+  rpc FindPathExcludingByRecordID(FindPathExcludingByRecordID) returns () {}
+  rpc FindPathExcludingByRecordID_V2(FindPathExcludingByRecordID_V2) returns (FindPathExcludingByRecordID_V2) {}
+  rpc FindPathIncludingSourceByEntityID(FindPathIncludingSourceByEntityID) returns (FindPathIncludingSourceByEntityID) {}
+  rpc FindPathIncludingSourceByEntityID_V2(FindPathIncludingSourceByEntityID_V2) returns (FindPathIncludingSourceByEntityID_V2) {}
+  rpc FindPathIncludingSourceByRecordID(FindPathIncludingSourceByRecordID) returns (FindPathIncludingSourceByRecordID) {}
+  rpc FindPathIncludingSourceByRecordID_V2(FindPathIncludingSourceByRecordID_V2) returns (FindPathIncludingSourceByRecordID_V2) {}
+  rpc GetActiveConfigID(GetActiveConfigID) returns (GetActiveConfigID) {}
+  rpc GetEntityByEntityID(GetEntityByEntityID) returns (GetEntityByEntityID) {}
+  rpc GetEntityByEntityID_V2(GetEntityByEntityID_V2) returns (GetEntityByEntityID_V2) {}
+  rpc GetEntityByRecordID(GetEntityByRecordID) returns (GetEntityByRecordID) {}
+  rpc GetEntityByRecordID_V2(GetEntityByRecordID_V2) returns (GetEntityByRecordID_V2) {}
+  rpc GetLastException(GetLastException) returns (GetLastException) {}
+  rpc GetLastExceptionCode(GetLastExceptionCode) returns (GetLastExceptionCode) {}
+  rpc GetRecord(GetRecord) returns (GetRecord) {}
+  rpc GetRecord_V2(GetRecord_V2) returns (GetRecord_V2) {}
+  rpc GetRedoRecord(GetRedoRecord) returns (GetRedoRecord) {}
+  rpc GetRepositoryLastModifiedTime(GetRepositoryLastModifiedTime) returns (GetRepositoryLastModifiedTime) {}
+  rpc GetVirtualEntityByRecordID(GetVirtualEntityByRecordID) returns (GetVirtualEntityByRecordID) {}
+  rpc GetVirtualEntityByRecordID_V2(GetVirtualEntityByRecordID_V2) returns (GetVirtualEntityByRecordID_V2) {}
+  rpc HowEntityByEntityID(HowEntityByEntityID) returns (HowEntityByEntityID) {}
+  rpc HowEntityByEntityID_V2(HowEntityByEntityID_V2 returns (HowEntityByEntityID_V2) {}
+  rpc Init(Init) returns Init) {}
+  rpc InitWithConfigID(InitWithConfigID) returns (InitWithConfigID) {}
+  rpc PrimeEngine(PrimeEngine) returns (PrimeEngine) {}
+  rpc Process(Process) returns (Process) {}
+  rpc ProcessRedoRecord(ProcessRedoRecord) returns (ProcessRedoRecord) {}
+  rpc ProcessRedoRecordWithInfo(ProcessRedoRecordWithInfo) returns (ProcessRedoRecordWithInfo) {}
+  rpc ProcessWithInfo(ProcessWithInfo) returns (ProcessWithInfo) {}
+  rpc ProcessWithResponse(ProcessWithResponse) returns (ProcessWithResponse) {}
+  rpc ProcessWithResponseResize(ProcessWithResponseResize) returns (ProcessWithResponseResize) {}
+  rpc PurgeRepository(PurgeRepository) returns (PurgeRepository) {}
+  rpc ReevaluateEntity(ReevaluateEntity) returns (ReevaluateEntity) {}
+  rpc ReevaluateEntityWithInfo(ReevaluateEntityWithInfo) returns (ReevaluateEntityWithInfo) {}
+  rpc ReevaluateRecord(ReevaluateRecord) returns (ReevaluateRecord) {}
+  rpc ReevaluateRecordWithInfo(ReevaluateRecordWithInfo) returns (ReevaluateRecordWithInfo) {}
+  rpc Reinit(Reinit) returns (Reinit) {}
+  rpc ReplaceRecord(ReplaceRecord) returns (ReplaceRecord) {}
+  rpc ReplaceRecordWithInfo(ReplaceRecordWithInfo) returns (ReplaceRecordWithInfo) {}
+  rpc SearchByAttributes(SearchByAttributes) returns (SearchByAttributes) {}
+  rpc SearchByAttributes_V2(SearchByAttributes_V2) returns (SearchByAttributes_V2) {}
+  rpc Stats(Stats) returns (Stats) {}
+  rpc WhyEntities(WhyEntities) returns (WhyEntities) {}
+  rpc WhyEntities_V2(WhyEntities_V2) returns (WhyEntities_V2) {}
+  rpc WhyEntityByEntityID(WhyEntityByEntityID) returns (WhyEntityByEntityID) {}
+  rpc WhyEntityByEntityID_V2(WhyEntityByEntityID_V2) returns (WhyEntityByEntityID_V2) {}
+  rpc WhyEntityByRecordID(WhyEntityByRecordID) returns (WhyEntityByRecordID) {}
+  rpc WhyEntityByRecordID_V2(WhyEntityByRecordID_V2) returns (WhyEntityByRecordID_V2) {}
+  rpc WhyRecords(WhyRecords) returns (WhyRecords) {}
+  rpc WhyRecords_V2(WhyRecords_V2) returns (WhyRecords_V2) {}
+
+
+  rpc CheckDBPerf (CheckDBPerfRequest) returns (CheckDBPerfResponse) {}
+}
