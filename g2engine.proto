@@ -598,45 +598,182 @@ message ProcessWithInfoResponse {
   string result = 1;
 }
 
-message ProcessWithResponseRequest {}
-message ProcessWithResponseResponse {}
-message ProcessWithResponseResizeRequest {}
-message ProcessWithResponseResizeResponse {}
+message ProcessWithResponseRequest {
+  string record = 1;
+}
+
+message ProcessWithResponseResponse {
+  string result = 1;
+}
+
+message ProcessWithResponseResizeRequest {
+  string record = 1;
+}
+
+message ProcessWithResponseResizeResponse {
+  string result = 1;
+}
+
 message PurgeRepositoryRequest {}
+
 message PurgeRepositoryResponse {}
-message ReevaluateEntityRequest {}
+
+message ReevaluateEntityRequest {
+  int64 entityID = 1;
+  int64 flags = 2;
+}
+
 message ReevaluateEntityResponse {}
-message ReevaluateEntityWithInfoRequest {}
-message ReevaluateEntityWithInfoResponse {}
-message ReevaluateRecordRequest {}
+
+message ReevaluateEntityWithInfoRequest {
+  int64 entityID = 1;
+  int64 flags = 2;
+}
+
+message ReevaluateEntityWithInfoResponse {
+  string result = 1;
+}
+
+message ReevaluateRecordRequest {
+  string dataSourceCode = 1;
+  string recordID = 2;
+  int64 flags = 3;
+}
+
 message ReevaluateRecordResponse {}
-message ReevaluateRecordWithInfoRequest {}
-message ReevaluateRecordWithInfoResponse {}
-message ReinitRequest {}
+
+message ReevaluateRecordWithInfoRequest {
+  string dataSourceCode = 1;
+  string recordID = 2;
+  int64 flags = 3;
+}
+
+message ReevaluateRecordWithInfoResponse {
+  string result = 1;
+}
+
+message ReinitRequest {
+  int64 initConfigID = 1;
+}
+
 message ReinitResponse {}
-message ReplaceRecordRequest {}
+
+message ReplaceRecordRequest {
+  string dataSourceCode = 1;
+  string recordID = 2;
+  string jsonData = 3;
+  string loadID = 4;
+}
+
 message ReplaceRecordResponse {}
-message ReplaceRecordWithInfoRequest {}
-message ReplaceRecordWithInfoResponse {}
-message SearchByAttributesRequest {}
-message SearchByAttributesResponse {}
-message SearchByAttributes_V2Request {}
-message SearchByAttributes_V2Response {}
+
+message ReplaceRecordWithInfoRequest {
+  string dataSourceCode = 1;
+  string recordID = 2;
+  string jsonData = 3;
+  string loadID = 4;
+  int64 flags = 5;
+}
+
+message ReplaceRecordWithInfoResponse {
+  string result = 1;
+}
+
+message SearchByAttributesRequest {
+  string jsonData = 1;
+}
+
+message SearchByAttributesResponse {
+  string result = 1;
+}
+
+message SearchByAttributes_V2Request {
+  string jsonData = 1;
+  int64 flags = 2;
+}
+
+message SearchByAttributes_V2Response {
+  string result = 1;
+}
+
 message StatsRequest {}
-message StatsResponse {}
-message WhyEntitiesRequest {}
-message WhyEntitiesResponse {}
-message WhyEntities_V2Request {}
-message WhyEntities_V2Response {}
-message WhyEntityByEntityIDRequest {}
-message WhyEntityByEntityIDResponse {}
-message WhyEntityByEntityID_V2Request {}
-message WhyEntityByEntityID_V2Response {}
-message WhyEntityByRecordIDRequest {}
-message WhyEntityByRecordIDResponse {}
-message WhyEntityByRecordID_V2Request {}
-message WhyEntityByRecordID_V2Response {}
-message WhyRecordsRequest {}
-message WhyRecordsResponse {}
-message WhyRecords_V2Request {}
-message WhyRecords_V2Response {}
+
+message StatsResponse {
+  string result = 1;
+}
+
+message WhyEntitiesRequest {
+  int64 entityID1 = 1;
+  int64 entityID2 = 2;
+}
+
+message WhyEntitiesResponse {
+  string result = 1;
+}
+
+message WhyEntities_V2Request {
+  int64 entityID1 = 1;
+  int64 entityID2 = 2;
+  int64 flags = 3;
+}
+
+message WhyEntities_V2Response {
+  string result = 1;
+}
+
+message WhyEntityByEntityIDRequest {
+  int64 entityID = 1;
+}
+
+message WhyEntityByEntityIDResponse {
+  string result = 1;
+}
+
+message WhyEntityByEntityID_V2Request {
+  int64 entityID = 1;
+  int64 flags = 2;
+}
+
+message WhyEntityByEntityID_V2Response {
+  string result = 1;
+}
+
+message WhyEntityByRecordIDRequest {
+  string dataSourceCode = 1;
+  string recordID = 2;
+}
+
+message WhyEntityByRecordIDResponse {
+  string result = 1;
+}
+
+message WhyEntityByRecordID_V2Request {
+  string dataSourceCode = 1;
+  string recordID = 2;
+  int64 flags = 3;
+}
+message WhyEntityByRecordID_V2Response {
+  string result = 1;
+}
+
+message WhyRecordsRequest {
+  string dataSourceCode1 = 1;
+  string recordID1 = 2;
+  string dataSourceCode2 = 3;
+  string recordID2 = 4;
+}
+
+message WhyRecordsResponse {
+  string result = 1;
+}
+
+message WhyRecords_V2Request {
+  string dataSourceCode1 = 1;
+  string recordID1 = 2;
+  string dataSourceCode2 = 3;
+  string recordID2 = 4;
+  int64 flags = 5;
+}
+message WhyRecords_V2Response {
+  string result = 1;
+}
