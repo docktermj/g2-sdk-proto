@@ -179,57 +179,279 @@ message DestroyRequest {}
 message DestroyResponse {}
 
 message ExportConfigRequest {}
-message ExportConfigResponse {}
+
+message ExportConfigResponse {
+  string result = 1;
+}
+
 message ExportConfigAndConfigIDRequest {}
-message ExportConfigAndConfigIDResponse {}
-message ExportCSVEntityReportRequest {}
-message ExportCSVEntityReportResponse {}
-message ExportJSONEntityReportRequest {}
-message ExportJSONEntityReportResponse {}
-message FetchNextRequest {}
-message FetchNextResponse {}
-message FindInterestingEntitiesByEntityIDRequest {}
-message FindInterestingEntitiesByEntityIDResponse {}
-message FindInterestingEntitiesByRecordIDRequest {}
-message FindInterestingEntitiesByRecordIDResponse {}
-message FindNetworkByEntityIDRequest {}
-message FindNetworkByEntityIDResponse {}
-message FindNetworkByEntityID_V2Request {}
-message FindNetworkByEntityID_V2Response {}
-message FindNetworkByRecordIDRequest {}
-message FindNetworkByRecordIDResponse {}
-message FindNetworkByRecordID_V2Request {}
-message FindNetworkByRecordID_V2Response {}
-message FindPathByEntityIDRequest {}
-message FindPathByEntityIDResponse {}
-message FindPathByEntityID_V2Request {}
-message FindPathByEntityID_V2Response {}
-message FindPathByRecordIDRequest {}
-message FindPathByRecordIDResponse {}
-message FindPathByRecordID_V2Request {}
-message FindPathByRecordID_V2Response {}
-message FindPathExcludingByEntityIDRequest {}
-message FindPathExcludingByEntityIDResponse {}
-message FindPathExcludingByEntityID_V2Request {}
-message FindPathExcludingByEntityID_V2Response {}
-message FindPathExcludingByRecordIDRequest {}
-message FindPathExcludingByRecordIDResponse {}
-message FindPathExcludingByRecordID_V2Request {}
-message FindPathExcludingByRecordID_V2Response {}
-message FindPathIncludingSourceByEntityIDRequest {}
-message FindPathIncludingSourceByEntityIDResponse {}
-message FindPathIncludingSourceByEntityID_V2Request {}
-message FindPathIncludingSourceByEntityID_V2Response {}
-message FindPathIncludingSourceByRecordIDRequest {}
-message FindPathIncludingSourceByRecordIDResponse {}
-message FindPathIncludingSourceByRecordID_V2Request {}
-message FindPathIncludingSourceByRecordID_V2Response {}
+
+message ExportConfigAndConfigIDResponse {
+  string config = 1;
+  int64 configID = 2;
+}
+
+message ExportCSVEntityReportRequest {
+  string csvColumnList = 1;
+  int64 flags = 2;
+}
+
+message ExportCSVEntityReportResponse {
+  string result = 1;
+}
+
+message ExportJSONEntityReportRequest {
+  int64 flags = 1;
+}
+
+message ExportJSONEntityReportResponse {
+  string result = 1;
+}
+
+message FetchNextRequest {
+  string responseHandle = 1;
+}
+
+message FetchNextResponse {
+  string result = 1;
+}
+
+message FindInterestingEntitiesByEntityIDRequest {
+  int64 entityID = 1;
+  int64 flags = 2;
+}
+message FindInterestingEntitiesByEntityIDResponse {
+  string result = 1;
+}
+
+message FindInterestingEntitiesByRecordIDRequest {
+  string dataSourceCode = 1;
+  string recordID = 2;
+  int64 flags = 3;
+}
+
+message FindInterestingEntitiesByRecordIDResponse {
+  string result = 1;
+}
+
+message FindNetworkByEntityIDRequest {
+  string entityList = 1;
+  int32 maxDegree = 2;
+  int32 buildOutDegree = 3;
+  int32 maxEntities = 4;
+}
+
+message FindNetworkByEntityIDResponse {
+  string result = 1;
+}
+
+message FindNetworkByEntityID_V2Request {
+  string entityList = 1;
+  int32 maxDegree = 2;
+  int32 buildOutDegree = 3;
+  int32 maxEntities = 4;
+  int64 flags = 5;
+}
+
+message FindNetworkByEntityID_V2Response {
+  string result = 1;
+}
+
+message FindNetworkByRecordIDRequest {
+  string recordList = 1;
+  int32 maxDegree = 2;
+  int32 buildOutDegree = 3;
+  int32 maxEntities = 4;
+}
+
+message FindNetworkByRecordIDResponse {
+  string result = 1;
+}
+
+message FindNetworkByRecordID_V2Request {
+  string recordList = 1;
+  int32 maxDegree = 2;
+  int32 buildOutDegree = 3;
+  int32 maxEntities = 4;
+  int64 flags = 5;
+}
+
+message FindNetworkByRecordID_V2Response {
+  string result = 1;
+}
+
+message FindPathByEntityIDRequest {
+  int64 entityID1 = 1;
+  int64 entityID2 = 2;
+  int32 maxDegree = 3;
+}
+
+message FindPathByEntityIDResponse {
+  string result = 1;
+}
+message FindPathByEntityID_V2Request {
+  int64 entityID1 = 1;
+  int64 entityID2 = 2;
+  int32 maxDegree = 3;
+  int64 flags = 4;
+}
+
+message FindPathByEntityID_V2Response {
+  string result = 1;
+}
+
+message FindPathByRecordIDRequest {
+  string dataSourceCode1 = 1;
+  string recordID1 = 2;
+  string dataSourceCode2 = 3;
+  string recordID2 = 4;
+  int32 maxDegree = 5;
+}
+
+message FindPathByRecordIDResponse {
+  string result = 1;
+}
+
+message FindPathByRecordID_V2Request {
+  string dataSourceCode1 = 1;
+  string recordID1 = 2;
+  string dataSourceCode2 = 3;
+  string recordID2 = 4;
+  int32 maxDegree = 5;
+  int64 flags = 6;
+}
+
+message FindPathByRecordID_V2Response {
+  string result = 1;
+}
+
+message FindPathExcludingByEntityIDRequest {
+  int64 entityID1 = 1;
+  int64 entityID2 = 2;
+  int32 maxDegree = 3;
+  string excludedEntities = 4;
+}
+
+message FindPathExcludingByEntityIDResponse {
+  string result = 1;
+}
+
+message FindPathExcludingByEntityID_V2Request {
+  int64 entityID1 = 1;
+  int64 entityID2 = 2;
+  int32 maxDegree = 3;
+  string excludedEntities = 4;
+  int64 flags = 5;
+}
+
+message FindPathExcludingByEntityID_V2Response {
+  string result = 1;
+}
+
+message FindPathExcludingByRecordIDRequest {
+  string dataSourceCode1 = 1;
+  string recordID1 = 2;
+  string dataSourceCode2 = 3;
+  string recordID2 = 4;
+  int32 maxDegree = 5;
+  string excludedRecords = 6;
+}
+
+message FindPathExcludingByRecordIDResponse {
+  string result = 1;
+}
+
+message FindPathExcludingByRecordID_V2Request {
+  string dataSourceCode1 = 1;
+  string recordID1 = 2;
+  string dataSourceCode2 = 3;
+  string recordID2 = 4;
+  int32 maxDegree = 5;
+  string excludedRecords = 6;
+  int64 flags = 7;
+}
+
+message FindPathExcludingByRecordID_V2Response {
+  string result = 1;
+}
+
+message FindPathIncludingSourceByEntityIDRequest {
+  int64 entityID1 = 1;
+  int64 entityID2 = 2;
+  int32 maxDegree = 3;
+  string excludedEntities = 4;
+  string requiredDsrcs = 5;
+}
+
+message FindPathIncludingSourceByEntityIDResponse {
+  string result = 1;
+}
+
+message FindPathIncludingSourceByEntityID_V2Request {
+  int64 entityID1 = 1;
+  int64 entityID2 = 2;
+  int32 maxDegree = 3;
+  string excludedEntities = 4;
+  string requiredDsrcs = 5;
+  int64 flags = 6;
+}
+
+message FindPathIncludingSourceByEntityID_V2Response {
+  string result = 1;
+}
+
+message FindPathIncludingSourceByRecordIDRequest {
+  string dataSourceCode1 = 1;
+  string recordID1 = 2;
+  string dataSourceCode2 = 3;
+  string recordID2 = 4;
+  int32 maxDegree = 5;
+  string excludedRecords = 6;
+  string requiredDsrcs = 7;
+}
+
+message FindPathIncludingSourceByRecordIDResponse {
+  string result = 1;
+}
+
+message FindPathIncludingSourceByRecordID_V2Request {
+  string dataSourceCode1 = 1;
+  string recordID1 = 2;
+  string dataSourceCode2 = 3;
+  string recordID2 = 4;
+  int32 maxDegree = 5;
+  string excludedRecords = 6;
+  string requiredDsrcs = 7;
+  int64 flags = 8;
+}
+
+message FindPathIncludingSourceByRecordID_V2Response {
+  string result = 1;
+}
+
 message GetActiveConfigIDRequest {}
-message GetActiveConfigIDResponse {}
-message GetEntityByEntityIDRequest {}
-message GetEntityByEntityIDResponse {}
-message GetEntityByEntityID_V2Request {}
-message GetEntityByEntityID_V2Response {}
+
+message GetActiveConfigIDResponse {
+  int64 result = 1;
+}
+
+message GetEntityByEntityIDRequest {
+  int64 entityID = 1;
+}
+
+message GetEntityByEntityIDResponse {
+  string result = 1;
+}
+
+message GetEntityByEntityID_V2Request {
+  int64 entityID = 1;
+  int64 flags = 2;
+}
+
+message GetEntityByEntityID_V2Response {
+  string result = 1;
+}
+
 message GetEntityByRecordIDRequest {}
 message GetEntityByRecordIDResponse {}
 message GetEntityByRecordID_V2Request {}
