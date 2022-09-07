@@ -452,44 +452,152 @@ message GetEntityByEntityID_V2Response {
   string result = 1;
 }
 
-message GetEntityByRecordIDRequest {}
-message GetEntityByRecordIDResponse {}
-message GetEntityByRecordID_V2Request {}
-message GetEntityByRecordID_V2Response {}
+message GetEntityByRecordIDRequest {
+  string dataSourceCode = 1;
+  string recordID = 2;
+}
+
+message GetEntityByRecordIDResponse {
+  string result = 1;
+}
+
+message GetEntityByRecordID_V2Request {
+  string dataSourceCode = 1;
+  string recordID = 2;
+  int64 flags = 3;
+}
+
+message GetEntityByRecordID_V2Response {
+  string result = 1;
+}
+
 message GetLastExceptionRequest {}
-message GetLastExceptionResponse {}
+
+message GetLastExceptionResponse {
+  string result = 1;
+}
+
 message GetLastExceptionCodeRequest {}
-message GetLastExceptionCodeResponse {}
-message GetRecordRequest {}
-message GetRecordResponse {}
-message GetRecord_V2Request {}
-message GetRecord_V2Response {}
+
+message GetLastExceptionCodeResponse {
+  int32 result = 1;
+}
+
+message GetRecordRequest {
+  string dataSourceCode = 1;
+  string recordID = 2;
+}
+
+message GetRecordResponse {
+  string result = 1;
+}
+
+message GetRecord_V2Request {
+  string dataSourceCode = 1;
+  string recordID = 2;
+  int64 flags = 3;
+}
+
+message GetRecord_V2Response {
+  string result = 1;
+}
+
 message GetRedoRecordRequest {}
-message GetRedoRecordResponse {}
+
+message GetRedoRecordResponse {
+  string result = 1;
+}
+
 message GetRepositoryLastModifiedTimeRequest {}
-message GetRepositoryLastModifiedTimeResponse {}
-message GetVirtualEntityByRecordIDRequest {}
-message GetVirtualEntityByRecordIDResponse {}
-message GetVirtualEntityByRecordID_V2Request {}
-message GetVirtualEntityByRecordID_V2Response {}
-message HowEntityByEntityIDRequest {}
-message HowEntityByEntityIDResponse {}
-message HowEntityByEntityID_V2Request {}
-message HowEntityByEntityID_V2Response {}
-message InitRequest {}
+
+message GetRepositoryLastModifiedTimeResponse {
+  int64 result = 1;
+}
+
+message GetVirtualEntityByRecordIDRequest {
+  string recordList = 1;
+}
+
+message GetVirtualEntityByRecordIDResponse {
+  string result = 1;
+}
+message GetVirtualEntityByRecordID_V2Request {
+  string recordList = 1;
+  int64 flags = 2;
+}
+
+message GetVirtualEntityByRecordID_V2Response {
+  string result = 1;
+}
+
+message HowEntityByEntityIDRequest {
+  int64 entityID = 1;
+}
+
+message HowEntityByEntityIDResponse {
+  string result = 1;
+}
+
+message HowEntityByEntityID_V2Request {
+  int64 entityID = 1;
+  int64 flags = 2;
+}
+
+message HowEntityByEntityID_V2Response {
+  string result = 1;
+}
+
+message InitRequest {
+  string moduleName = 1;
+  string iniParams = 2;
+  int32 verboseLogging = 3;
+}
+
 message InitResponse {}
-message InitWithConfigIDRequest {}
+
+message InitWithConfigIDRequest {
+  string moduleName = 1;
+  string iniParams = 2;
+  int64 initConfigID = 3;
+  int32 verboseLogging = 4;
+}
+
 message InitWithConfigIDResponse {}
+
 message PrimeEngineRequest {}
+
 message PrimeEngineResponse {}
-message ProcessRequest {}
+
+message ProcessRequest {
+  string record = 1;
+}
+
 message ProcessResponse {}
+
 message ProcessRedoRecordRequest {}
-message ProcessRedoRecordResponse {}
-message ProcessRedoRecordWithInfoRequest {}
-message ProcessRedoRecordWithInfoResponse {}
-message ProcessWithInfoRequest {}
-message ProcessWithInfoResponse {}
+
+message ProcessRedoRecordResponse {
+  string result = 1;
+}
+
+message ProcessRedoRecordWithInfoRequest {
+  int64 flags = 1;
+}
+
+message ProcessRedoRecordWithInfoResponse {
+  string result = 1;
+  string withInfo = 2;
+}
+
+message ProcessWithInfoRequest {
+  string record = 1;
+  int64 flags = 1;
+}
+
+message ProcessWithInfoResponse {
+  string result = 1;
+}
+
 message ProcessWithResponseRequest {}
 message ProcessWithResponseResponse {}
 message ProcessWithResponseResizeRequest {}
