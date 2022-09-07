@@ -86,28 +86,98 @@ service G2Diagnostic {
   rpc WhyRecords_V2(WhyRecords_V2Request) returns (WhyRecords_V2Response) {}
 }
 
-message AddRecordRequestRequest {}
+message AddRecordRequestRequest {
+  string dataSourceCode = 1;
+  string recordID = 2;
+  string jsonData = 3;
+  string loadID = 4;
+}
+
 message AddRecordResponseResponse {}
-message AddRecordWithInfoRequest {}
-message AddRecordWithInfoResponse {}
-message AddRecordWithInfoWithReturnedRecordIDRequest {}
-message AddRecordWithInfoWithReturnedRecordIDResponse {}
-message AddRecordWithReturnedRecordIDRequest {}
-message AddRecordWithReturnedRecordIDResponse {}
-message CheckRecordRequest {}
-message CheckRecordResponse {}
+
+message AddRecordWithInfoRequest {
+  string dataSourceCode = 1;
+  string recordID = 2;
+  string jsonData = 3;
+  string loadID = 4;
+  int64 flags = 5;
+}
+
+message AddRecordWithInfoResponse {
+  string result = 1;
+}
+
+message AddRecordWithInfoWithReturnedRecordIDRequest {
+  string dataSourceCode = 1;
+  string jsonData = 2;
+  string loadID = 3;
+  int64 flags = 4;
+}
+
+message AddRecordWithInfoWithReturnedRecordIDResponse {
+  string withInfo = 1;
+  string recordID = 2;
+}
+
+message AddRecordWithReturnedRecordIDRequest {
+  string dataSourceCode = 1;
+  string jsonData = 2;
+  string loadID = 3;
+}
+
+message AddRecordWithReturnedRecordIDResponse {
+  string result = 1;
+}
+
+message CheckRecordRequest {
+  string record = 1;
+  string recordQueryList = 2;
+}
+
+message CheckRecordResponse {
+  string result = 1;
+}
+
 message ClearLastExceptionRequest {}
+
 message ClearLastExceptionResponse {}
-message CloseExportRequest {}
-message CloseExportResponse {}
+
+message CloseExportRequest {
+  string responseHandle = 1;
+}
+
+message CloseExportResponse {
+}
+
 message CountRedoRecordsRequest {}
-message CountRedoRecordsResponse {}
-message DeleteRecordRequest {}
+
+message CountRedoRecordsResponse {
+  int64 result = 1;
+}
+
+message DeleteRecordRequest {
+  string dataSourceCode = 1;
+  string recordID = 2;
+  string loadID = 3;
+}
+
 message DeleteRecordResponse {}
-message DeleteRecordWithInfoRequest {}
-message DeleteRecordWithInfoResponse {}
+
+message DeleteRecordWithInfoRequest {
+  string dataSourceCode = 1;
+  string recordID = 2;
+  string loadID = 3;
+  int64 flags = 4;
+}
+
+message DeleteRecordWithInfoResponse {
+  string result = 1;
+}
+
 message DestroyRequest {}
+
 message DestroyResponse {}
+
 message ExportConfigRequest {}
 message ExportConfigResponse {}
 message ExportConfigAndConfigIDRequest {}
