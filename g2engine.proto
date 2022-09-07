@@ -146,8 +146,7 @@ message CloseExportRequest {
   string responseHandle = 1;
 }
 
-message CloseExportResponse {
-}
+message CloseExportResponse {}
 
 message CountRedoRecordsRequest {}
 
