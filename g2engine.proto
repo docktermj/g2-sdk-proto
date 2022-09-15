@@ -590,7 +590,7 @@ message ProcessRedoRecordWithInfoResponse {
 
 message ProcessWithInfoRequest {
   string record = 1;
-  int64 flags = 1;
+  int64 flags = 2;
 }
 
 message ProcessWithInfoResponse {
