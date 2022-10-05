@@ -1,8 +1,6 @@
 # g2-sdk-proto
 
-
-
-### Clone repository
+## Clone repository
 
 1. Set these environment variable values:
 
@@ -16,6 +14,33 @@
 1. Using the environment variables values just set, follow steps in [clone-repository](https://github.com/Senzing/knowledge-base/blob/main/HOWTO/clone-repository.md) to install the Git repository.
 
 ## Language
+
+### C++
+
+1. [Clone repository](#clone-repository).
+1. Follow the
+   [C++ Quick start](https://grpc.io/docs/languages/cpp/quickstart/)
+   tutorial to prepare an environment.
+1. [Generating client and server code](https://grpc.io/docs/languages/go/basics/#generating-client-and-server-code).
+   Example:
+
+    ```console
+    export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/generated_source_code/cpp
+    mkdir -p ${SENZING_OUTPUT_DIR}
+
+    protoc \
+        --proto_path=${GIT_REPOSITORY_DIR} \
+        --grpc_out=${SENZING_OUTPUT_DIR} \
+        --cpp_out=${SENZING_OUTPUT_DIR} \
+        ${GIT_REPOSITORY_DIR}/g2config.proto \
+        ${GIT_REPOSITORY_DIR}/g2configmgr.proto \
+        ${GIT_REPOSITORY_DIR}/g2diagnostic.proto \
+        ${GIT_REPOSITORY_DIR}/g2engine.proto \
+        ${GIT_REPOSITORY_DIR}/g2hasher.proto \
+        ${GIT_REPOSITORY_DIR}/g2product.proto \
+        ${GIT_REPOSITORY_DIR}/g2ssadm.proto
+
+    ```
 
 ### Go
 
@@ -64,7 +89,7 @@
 1. Follow the
    [Java Quick start](https://grpc.io/docs/languages/java/quickstart/)
    tutorial to prepare an environment.
-1. xxx
+1. Generate client and server code.
    Example:
 
     ```console
@@ -92,7 +117,7 @@
 1. Follow the
    [Python Quick start](https://grpc.io/docs/languages/python/quickstart/)
    tutorial to prepare an environment.
-1. XXX
+1. Generate client and server code.
    Example:
 
     ```console
