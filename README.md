@@ -128,6 +128,33 @@
 
     ```
 
+### PHP
+
+1. [Clone repository](#clone-repository).
+1. Follow the
+   [PHP Quick start](https://grpc.io/docs/languages/php/quickstart/)
+   tutorial to prepare an environment.
+1. Generate client and server code.
+   Example:
+
+    ```console
+    export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/generated_source_code/php
+    mkdir -p ${SENZING_OUTPUT_DIR}
+
+    protoc \
+        --proto_path=${GIT_REPOSITORY_DIR} \
+        --php_out=${SENZING_OUTPUT_DIR} \
+        --grpc_out=${SENZING_OUTPUT_DIR} \
+        --plugin=protoc-gen-grpc=bins/opt/grpc_php_plugin \
+        ${GIT_REPOSITORY_DIR}/g2config.proto \
+        ${GIT_REPOSITORY_DIR}/g2configmgr.proto \
+        ${GIT_REPOSITORY_DIR}/g2diagnostic.proto \
+        ${GIT_REPOSITORY_DIR}/g2engine.proto \
+        ${GIT_REPOSITORY_DIR}/g2hasher.proto \
+        ${GIT_REPOSITORY_DIR}/g2product.proto \
+        ${GIT_REPOSITORY_DIR}/g2ssadm.proto
+    ```
+
 ### Python
 
 1. [Clone repository](#clone-repository).
