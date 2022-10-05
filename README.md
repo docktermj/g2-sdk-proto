@@ -27,7 +27,7 @@
    Example:
 
     ```console
-    export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/bindings/go
+    export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/generated_source_code/go
     mkdir -p ${SENZING_OUTPUT_DIR}
 
     protoc \
@@ -65,7 +65,7 @@
    Example:
 
     ```console
-    export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/bindings/java
+    export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/generated_source_code/java
     mkdir -p ${SENZING_OUTPUT_DIR}
 
     protoc \
