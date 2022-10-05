@@ -23,13 +23,6 @@
 1. Follow the
    [Go Quick start](https://grpc.io/docs/languages/go/quickstart/)
    tutorial to prepare an environment.
-1. :pencil2: Specify a directory for Protocol Buffer Compiler output.
-   Example:
-
-    ```console
-    export SENZING_GPRC_GO_DIR=~/g2-sdk-go-grpc
-    ```
-
 1. [Generating client and server code](https://grpc.io/docs/languages/go/basics/#generating-client-and-server-code).
    Example:
 
