@@ -30,17 +30,18 @@
     export SENZING_GPRC_GO_DIR=~/g2-sdk-go-grpc
     ```
 
-1. XXX
+1. [Generating client and server code](https://grpc.io/docs/languages/go/basics/#generating-client-and-server-code).
+   Example:
 
     ```console
-    rm -rf ${SENZING_GPRC_GO_DIR:-/tmp/nowhere}
-    mkdir -p ${SENZING_GPRC_GO_DIR}/out ${SENZING_GPRC_GO_DIR}/grpc
+    export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/bindings/go
+    mkdir -p ${SENZING_OUTPUT_DIR}
 
     protoc \
         --proto_path=${GIT_REPOSITORY_DIR} \
-        --go_out=${SENZING_GPRC_GO_DIR}/out \
+        --go_out=${SENZING_OUTPUT_DIR} \
         --go_opt=paths=source_relative \
-        --go-grpc_out=${SENZING_GPRC_GO_DIR}/grpc \
+        --go-grpc_out=${SENZING_OUTPUT_DIR} \
         --go-grpc_opt=paths=source_relative \
         g2config.proto \
         g2configmgr.proto \
@@ -51,6 +52,17 @@
         g2ssadm.proto
 
     ```
+
+    1. The `.../grpc` directory contains the following:
+        - Interface types (or stubs) for clients to call with the methods defined in the services.
+        - Interface types for servers to implement, also with the methods defined in the services.
+    1. The `.../out` directory contains the following:
+        - protocol buffer code to populate, serialize, and retrieve request and response message types.
+
+
+
+
+Creating the server
 
 
 1. If not yet done, install [protoc](https://grpc.io/docs/protoc-installation/)
