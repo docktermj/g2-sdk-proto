@@ -128,8 +128,6 @@
 
     ```
 
-1. **References:**
-
 ### Python
 
 1. [Clone repository](#clone-repository).
@@ -155,6 +153,38 @@
         ${GIT_REPOSITORY_DIR}/g2product.proto \
         ${GIT_REPOSITORY_DIR}/g2ssadm.proto
     ```
+
+### Ruby
+
+1. [Clone repository](#clone-repository).
+1. Follow the
+   [Ruby Quick start](https://grpc.io/docs/languages/ruby/quickstart/)
+   tutorial to prepare an environment.
+1. Generate client and server code.
+   Example:
+
+    ```console
+    export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/generated_source_code/ruby
+    mkdir -p ${SENZING_OUTPUT_DIR}
+
+    grpc_tools_ruby_protoc \
+        --proto_path=${GIT_REPOSITORY_DIR} \
+        --ruby_out=${SENZING_OUTPUT_DIR} \
+        --grpc_out=${SENZING_OUTPUT_DIR}
+        ${GIT_REPOSITORY_DIR}/g2config.proto \
+        ${GIT_REPOSITORY_DIR}/g2configmgr.proto \
+        ${GIT_REPOSITORY_DIR}/g2diagnostic.proto \
+        ${GIT_REPOSITORY_DIR}/g2engine.proto \
+        ${GIT_REPOSITORY_DIR}/g2hasher.proto \
+        ${GIT_REPOSITORY_DIR}/g2product.proto \
+        ${GIT_REPOSITORY_DIR}/g2ssadm.proto
+
+    ```
+
+### .NET
+
+1. **References:**
+    1. [Overview for gRPC on .NET](https://learn.microsoft.com/en-us/aspnet/core/grpc)
 
 ## References
 
