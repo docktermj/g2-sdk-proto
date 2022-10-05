@@ -70,7 +70,7 @@
 
     protoc \
         --proto_path=${GIT_REPOSITORY_DIR} \
-        --java-out=${SENZING_OUTPUT_DIR} \
+        --java_out=${SENZING_OUTPUT_DIR} \
         ${GIT_REPOSITORY_DIR}/g2config.proto \
         ${GIT_REPOSITORY_DIR}/g2configmgr.proto \
         ${GIT_REPOSITORY_DIR}/g2diagnostic.proto \
