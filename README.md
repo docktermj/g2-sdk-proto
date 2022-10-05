@@ -31,6 +31,23 @@
     protoc \
         --proto_path=${GIT_REPOSITORY_DIR} \
         --grpc_out=${SENZING_OUTPUT_DIR} \
+        --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` \
+        ${GIT_REPOSITORY_DIR}/g2config.proto \
+        ${GIT_REPOSITORY_DIR}/g2configmgr.proto \
+        ${GIT_REPOSITORY_DIR}/g2diagnostic.proto \
+        ${GIT_REPOSITORY_DIR}/g2engine.proto \
+        ${GIT_REPOSITORY_DIR}/g2hasher.proto \
+        ${GIT_REPOSITORY_DIR}/g2product.proto \
+        ${GIT_REPOSITORY_DIR}/g2ssadm.proto
+
+    ```
+
+    ```console
+    export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/generated_source_code/cpp
+    mkdir -p ${SENZING_OUTPUT_DIR}
+
+    protoc \
+        --proto_path=${GIT_REPOSITORY_DIR} \
         --cpp_out=${SENZING_OUTPUT_DIR} \
         ${GIT_REPOSITORY_DIR}/g2config.proto \
         ${GIT_REPOSITORY_DIR}/g2configmgr.proto \
