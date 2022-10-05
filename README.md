@@ -61,6 +61,9 @@
 ### Java
 
 1. [Clone repository](#clone-repository).
+1. Follow the
+   [Java Quick start](https://grpc.io/docs/languages/java/quickstart/)
+   tutorial to prepare an environment.
 1. xxx
    Example:
 
@@ -85,8 +88,10 @@
 
 ### Python
 
-
-
+1. [Clone repository](#clone-repository).
+1. Follow the
+   [Python Quick start](https://grpc.io/docs/languages/python/quickstart/)
+   tutorial to prepare an environment.
 1. XXX
    Example:
 
