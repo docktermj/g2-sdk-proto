@@ -83,6 +83,30 @@
 
 1. **References:**
 
+### Python
+
+
+
+1. XXX
+   Example:
+
+    ```console
+    export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/generated_source_code/python
+    mkdir -p ${SENZING_OUTPUT_DIR}
+
+    python -m grpc_tools.protoc \
+        --proto_path=${GIT_REPOSITORY_DIR} \
+        --python_out=${SENZING_OUTPUT_DIR} \
+        --grpc_python_out=${SENZING_OUTPUT_DIR} \
+        ${GIT_REPOSITORY_DIR}/g2config.proto \
+        ${GIT_REPOSITORY_DIR}/g2configmgr.proto \
+        ${GIT_REPOSITORY_DIR}/g2diagnostic.proto \
+        ${GIT_REPOSITORY_DIR}/g2engine.proto \
+        ${GIT_REPOSITORY_DIR}/g2hasher.proto \
+        ${GIT_REPOSITORY_DIR}/g2product.proto \
+        ${GIT_REPOSITORY_DIR}/g2ssadm.proto
+    ```
+
 ## References
 
 1. [Introduction to gRPC](https://grpc.io/docs/what-is-grpc/introduction/)
