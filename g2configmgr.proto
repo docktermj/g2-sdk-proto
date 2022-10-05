@@ -1,7 +1,7 @@
 syntax = "proto3";
-package g2config;
+package g2configmgr;
 
-option go_package = "github.com/docktermj/go-xyzzy-grpc/g2config";
+option go_package = "github.com/docktermj/go-xyzzy-grpc/g2configmgr";
 option java_multiple_files = true;
 option java_package = "io.grpc.examples.helloworld";
 option java_outer_classname = "HelloWorldProto";
