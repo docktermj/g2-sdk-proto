@@ -34,7 +34,7 @@
 
     ```console
     rm -rf ${SENZING_GPRC_GO_DIR:-/tmp/nowhere}
-    mkdir -p ${SENZING_GPRC_GO_DIR}/g2engine/out ${SENZING_GPRC_GO_DIR}/g2engine/grpc
+    mkdir -p ${SENZING_GPRC_GO_DIR}/out ${SENZING_GPRC_GO_DIR}/grpc
 
     protoc \
         --proto_path=${GIT_REPOSITORY_DIR} \

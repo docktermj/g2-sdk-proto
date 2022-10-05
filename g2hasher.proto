@@ -40,7 +40,7 @@ message GetLastExceptionResponse {
 message GetLastExceptionCodeRequest {}
 
 message GetLastExceptionCodeResponse {
-  int configID = 1;
+  int32 configID = 1;
 }
 
 message InitRequest {
@@ -54,7 +54,7 @@ message InitResponse {}
 message InitWithConfigRequest {
   string moduleName = 1;
   string iniParams = 2;
-  string configJson = 2;
+  string configJson = 3;
   int32 verboseLogging = 4;
 }
 

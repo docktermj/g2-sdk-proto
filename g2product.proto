@@ -35,7 +35,7 @@ message GetLastExceptionResponse {
 message GetLastExceptionCodeRequest {}
 
 message GetLastExceptionCodeResponse {
-  int configID = 1;
+  int32 configID = 1;
 }
 
 message InitRequest {
