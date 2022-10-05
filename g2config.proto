@@ -21,7 +21,6 @@ service G2Diagnostic {
   rpc Save (SaveRequest) returns (SaveResponse) {}
 }
 
-
 message AddDataSourceRequest {
   int64 configHandle = 1;
   string inputJson = 2;
@@ -40,11 +39,11 @@ message CloseRequest {
 
 message CloseResponse {}
 
-message CreateRequest {
-  int64 configHandle = 1;
-}
+message CreateRequest {}
 
-message CreateResponse {}
+message CreateResponse {
+  int64 result = 1;
+}
 
 message DeleteDataSourceRequest {
   int64 configHandle = 1;
@@ -87,10 +86,11 @@ message ListDataSourcesResponse {
 
 message LoadRequest {
   string jsonConfig = 1;
-  int64 configHandle = 1;
 }
 
-message LoadResponse {}
+message LoadResponse {
+  int64 result = 1;
+}
 
 message SaveRequest {
   string configHandle = 1;
