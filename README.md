@@ -94,7 +94,7 @@
     export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/generated_source_code/python
     mkdir -p ${SENZING_OUTPUT_DIR}
 
-    python -m grpc_tools.protoc \
+    python3 -m grpc_tools.protoc \
         --proto_path=${GIT_REPOSITORY_DIR} \
         --python_out=${SENZING_OUTPUT_DIR} \
         --grpc_python_out=${SENZING_OUTPUT_DIR} \
