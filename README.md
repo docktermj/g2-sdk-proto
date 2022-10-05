@@ -36,13 +36,13 @@
         --go_opt=paths=source_relative \
         --go-grpc_out=${SENZING_OUTPUT_DIR} \
         --go-grpc_opt=paths=source_relative \
-        g2config.proto \
-        g2configmgr.proto \
-        g2diagnostic.proto \
-        g2engine.proto \
-        g2hasher.proto \
-        g2product.proto \
-        g2ssadm.proto
+        ${GIT_REPOSITORY_DIR}/g2config.proto \
+        ${GIT_REPOSITORY_DIR}/g2configmgr.proto \
+        ${GIT_REPOSITORY_DIR}/g2diagnostic.proto \
+        ${GIT_REPOSITORY_DIR}/g2engine.proto \
+        ${GIT_REPOSITORY_DIR}/g2hasher.proto \
+        ${GIT_REPOSITORY_DIR}/g2product.proto \
+        ${GIT_REPOSITORY_DIR}/g2ssadm.proto
 
     ```
 
@@ -53,9 +53,39 @@
     1. In `${SENZING_OUTPUT_DIR}`, files *without* `_grpc.` in the filename contain the following:
         - protocol buffer code to populate, serialize, and retrieve request and response message types.
         - In other workds, it manages message content, not the network traffic.
+1. **References:**
+    1. [gRPC Documents for Go](https://grpc.io/docs/languages/go/)
+        1. [Go Quick start](https://grpc.io/docs/languages/go/quickstart/)
+    1. [Thread safety](https://grpc.io/docs/languages/go/generated-code/)
+
+### Java
+
+1. [Clone repository](#clone-repository).
+1. xxx
+   Example:
+
+    ```console
+    export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/bindings/java
+    mkdir -p ${SENZING_OUTPUT_DIR}
+
+    protoc \
+        --proto_path=${GIT_REPOSITORY_DIR} \
+        --java-out=${SENZING_OUTPUT_DIR} \
+        ${GIT_REPOSITORY_DIR}/g2config.proto \
+        ${GIT_REPOSITORY_DIR}/g2configmgr.proto \
+        ${GIT_REPOSITORY_DIR}/g2diagnostic.proto \
+        ${GIT_REPOSITORY_DIR}/g2engine.proto \
+        ${GIT_REPOSITORY_DIR}/g2hasher.proto \
+        ${GIT_REPOSITORY_DIR}/g2product.proto \
+        ${GIT_REPOSITORY_DIR}/g2ssadm.proto
+
+    ```
+
+1. **References:**
 
 ## References
 
 1. [Introduction to gRPC](https://grpc.io/docs/what-is-grpc/introduction/)
 1. [Protocol Buffers Overview](https://developers.google.com/protocol-buffers/docs/overview)
     1. [Language Guide for proto3](https://developers.google.com/protocol-buffers/docs/proto3)
+1. [protoc man page](https://manpages.debian.org/testing/protobuf-compiler/protoc.1.en.html)
