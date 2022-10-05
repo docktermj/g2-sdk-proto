@@ -170,7 +170,7 @@
     grpc_tools_ruby_protoc \
         --proto_path=${GIT_REPOSITORY_DIR} \
         --ruby_out=${SENZING_OUTPUT_DIR} \
-        --grpc_out=${SENZING_OUTPUT_DIR}
+        --grpc_out=${SENZING_OUTPUT_DIR} \
         ${GIT_REPOSITORY_DIR}/g2config.proto \
         ${GIT_REPOSITORY_DIR}/g2configmgr.proto \
         ${GIT_REPOSITORY_DIR}/g2diagnostic.proto \
