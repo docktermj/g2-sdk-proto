@@ -46,19 +46,13 @@
 
     ```
 
-    1. The `.../grpc` directory contains the following:
+    1. In `${SENZING_OUTPUT_DIR}`, files *with* `_grpc.` in the filename contain the following:
         - Interface types (or stubs) for clients to call with the methods defined in the services.
         - Interface types for servers to implement, also with the methods defined in the services.
-    1. The `.../out` directory contains the following:
+        - In other words, its the "gRPC" code that handles the network traffic, not the message content.
+    1. In `${SENZING_OUTPUT_DIR}`, files *without* `_grpc.` in the filename contain the following:
         - protocol buffer code to populate, serialize, and retrieve request and response message types.
-
-
-
-
-Creating the server
-
-
-1. If not yet done, install [protoc](https://grpc.io/docs/protoc-installation/)
+        - In other workds, it manages message content, not the network traffic.
 
 ## References
 
