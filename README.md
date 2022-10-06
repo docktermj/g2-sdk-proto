@@ -17,7 +17,7 @@
 ## Language
 
 The following instructions were used to create
-[generated source code](generated-source-code).
+[generated source code](generated_source_code).
 
 ### C++
 
