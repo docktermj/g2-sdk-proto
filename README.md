@@ -16,6 +16,9 @@
 
 ## Language
 
+The following instructions were used to create
+[generated source code](generated-source-code).
+
 ### C++
 
 1. [Clone repository](#clone-repository).
