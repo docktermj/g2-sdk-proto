@@ -135,13 +135,6 @@
 1. Follow the
    [PHP Quick start](https://grpc.io/docs/languages/php/quickstart/)
    tutorial to prepare an environment.
-1. :pencil2: Identify location of plugin.
-   Example:
-
-    ```console
-    export SENZING_PLUGIN_FILE=/home/senzing/.local/bin/grpc_php_plugin
-    ```
-
 1. Generate client and server code.
    Example:
 
@@ -153,7 +146,7 @@
         --proto_path=${GIT_REPOSITORY_DIR} \
         --php_out=${SENZING_OUTPUT_DIR} \
         --grpc_out=${SENZING_OUTPUT_DIR} \
-        --plugin=protoc-gen-grpc=${SENZING_PLUGIN_FILE} \
+        --plugin=protoc-gen-grpc=`which grpc_php_plugin` \
         ${GIT_REPOSITORY_DIR}/g2config.proto \
         ${GIT_REPOSITORY_DIR}/g2configmgr.proto \
         ${GIT_REPOSITORY_DIR}/g2diagnostic.proto \
