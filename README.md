@@ -141,11 +141,13 @@
     export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/generated_source_code/php
     mkdir -p ${SENZING_OUTPUT_DIR}
 
+    export SENZING_PLUGIN_FILE=/home/senzing/.local/bin/grpc_php_plugin
+
     protoc \
         --proto_path=${GIT_REPOSITORY_DIR} \
         --php_out=${SENZING_OUTPUT_DIR} \
         --grpc_out=${SENZING_OUTPUT_DIR} \
-        --plugin=protoc-gen-grpc=bins/opt/grpc_php_plugin \
+        --plugin=protoc-gen-grpc=${SENZING_PLUGIN_FILE} \
         ${GIT_REPOSITORY_DIR}/g2config.proto \
         ${GIT_REPOSITORY_DIR}/g2configmgr.proto \
         ${GIT_REPOSITORY_DIR}/g2diagnostic.proto \
