@@ -9,6 +9,7 @@
     export GIT_REPOSITORY=g2-sdk-proto
     export GIT_ACCOUNT_DIR=~/${GIT_ACCOUNT}.git
     export GIT_REPOSITORY_DIR="${GIT_ACCOUNT_DIR}/${GIT_REPOSITORY}"
+
     ```
 
 1. Using the environment variables values just set, follow steps in [clone-repository](https://github.com/Senzing/knowledge-base/blob/main/HOWTO/clone-repository.md) to install the Git repository.
@@ -134,14 +135,19 @@
 1. Follow the
    [PHP Quick start](https://grpc.io/docs/languages/php/quickstart/)
    tutorial to prepare an environment.
+1. :pencil2: Identify location of plugin.
+   Example:
+
+    ```console
+    export SENZING_PLUGIN_FILE=/home/senzing/.local/bin/grpc_php_plugin
+    ```
+
 1. Generate client and server code.
    Example:
 
     ```console
     export SENZING_OUTPUT_DIR=${GIT_REPOSITORY_DIR}/generated_source_code/php
     mkdir -p ${SENZING_OUTPUT_DIR}
-
-    export SENZING_PLUGIN_FILE=/home/senzing/.local/bin/grpc_php_plugin
 
     protoc \
         --proto_path=${GIT_REPOSITORY_DIR} \
@@ -155,6 +161,7 @@
         ${GIT_REPOSITORY_DIR}/g2hasher.proto \
         ${GIT_REPOSITORY_DIR}/g2product.proto \
         ${GIT_REPOSITORY_DIR}/g2ssadm.proto
+
     ```
 
 ### Python
@@ -181,6 +188,7 @@
         ${GIT_REPOSITORY_DIR}/g2hasher.proto \
         ${GIT_REPOSITORY_DIR}/g2product.proto \
         ${GIT_REPOSITORY_DIR}/g2ssadm.proto
+
     ```
 
 ### Ruby
